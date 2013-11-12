@@ -232,7 +232,7 @@ public class Graph {
 //		Check until Stack is empty
 		while (!dfsStack.isEmpty()) {
 //			Used to find alphabetically smallest vertex in the neighbor list
-			int minVertex = 1001;
+			int minVertex = 1000001;
 //			Checking for all the neighbors of the current vertex and finding the minimum
 			for (Neighbor n = vertices[current].adjList ; n != null ; n = n.next) {
 //				If the vertex in the neighbor list is already visited, not counting it
@@ -246,7 +246,7 @@ public class Graph {
 				}
 			}
 //			If all the vertices in the neighbor list is visited, popping from stack
-			if (minVertex == 1001) {
+			if (minVertex == 1000001) {
 				Vertex v = dfsStack.pop();
 				current = v.key;
 			} else {
@@ -267,6 +267,8 @@ public class Graph {
 		for (int i = 0 ; i < vertices.length ; i++) {
 			if (visitedArray[i] == false) {
 //				Even if a single vertex is unvisited
+//				System.out.println();
+//				System.out.println("i: " + i);
 				System.out.println();
 				System.out.println("The graph is NOT connected!");
 				return false;
